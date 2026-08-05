@@ -10,7 +10,7 @@ const Main = () => {
   const containerStyle = {
     display: "flex",
     flexDirection: "row",
-    width: "300px",
+    width: "auto",
   border: "1px solid black",
   padding: "10px",
   overflow: "hidden",
@@ -43,9 +43,7 @@ const Main = () => {
       <h1>Faq's</h1>
       <div style={containerStyle}>
         <AccordionItem faqs={faqs} questionStyle={questionStyle} answerStyle={answerStyle} handleToggle={handleToggle}/>
-      </div>
-
-      
+      </div>      
     </div>
   )
 }
