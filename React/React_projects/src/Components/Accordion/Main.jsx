@@ -17,6 +17,7 @@ const Main = () => {
   };
   
   const questionStyle = {
+    boxSizing: "border-box",
     width: "100%",
     padding: "10px",
     borderBottom: "1px solid black",
@@ -24,6 +25,7 @@ const Main = () => {
   };
   
   const answerStyle = {
+    boxSizing: "border-box",
     width: "100%",
     padding: "10px",
     borderBottom: "1px solid black",
