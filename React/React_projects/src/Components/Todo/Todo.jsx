@@ -8,8 +8,7 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
 
   const handleAddTask = (e) => {
-    console.log(e.target.value);
-    if(e.target.value.trim() === "" || e.target.value === null){
+    if(input.trim() === ""){
       alert("Please enter a task");
       return;
     }
