@@ -4,7 +4,7 @@ import { useState } from 'react'
 import AccordionItem from './AccordionItem';
 
 const Main = () => {
-  const [faqs, setFaqs] = useState(faqsdata);
+  // const [faqs, setFaqs] = useState(faqsdata);
   const [isOpened, setIsOpened] = useState(false);
 
   const containerStyle = {
@@ -32,19 +32,25 @@ const Main = () => {
     backgroundColor: "#f0f0f0",
   };
 
-  const handleToggle = (id) => {
-    setFaqs((prevFaqs) =>
-      prevFaqs.map((faq) =>
-        faq.id === id ? { ...faq, isOpened: !faq.isOpened } : { ...faq, isOpened: false }
-      )
-    );
-  };
+  // const handleToggle = (id) => {
+  //   console.log(faqsdata)
+  //   setFaqs((prevFaqs) =>
+  //     prevFaqs.map((faq) =>{
+  //       console.log(faq);
+  //       faq.id === id ? { ...faq, isOpened: !faq.isOpened } : { ...faq, isOpened: false }
+  // })
+  //   );
+  // };
+
+  const handleToggle = (id) =>{
+    setIsOpened((prev)=> prev === id ? null : id)
+  }
 
   return (
     <div>
       <h1>Faq's</h1>
       <div style={containerStyle}>
-        <AccordionItem faqs={faqs} questionStyle={questionStyle} answerStyle={answerStyle} handleToggle={handleToggle}/>
+        <AccordionItem isOpened = {isOpened} questionStyle={questionStyle} answerStyle={answerStyle} handleToggle={handleToggle}/>
       </div>      
     </div>
   )
