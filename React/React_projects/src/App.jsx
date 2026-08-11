@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Component from './Components/Tabs/Tabs'
+import Component from './Components/IntersectionObserver/Main'
 
 function App() {
   const [count, setCount] = useState(0)
