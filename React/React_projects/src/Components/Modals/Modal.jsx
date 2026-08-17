@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 
 const Modal = ({ onClose }) => {
   const outerStyle = {
@@ -10,6 +10,7 @@ const Modal = ({ onClose }) => {
     alignItems: "center",
   };
 
+  const [image, setImage] = useState("");
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -23,6 +24,10 @@ const Modal = ({ onClose }) => {
     };
   }, [onClose]);
 
+  const handleImage = (e) => {
+    setImage(e.target.files[0]);
+  };
+
   const innerStyle = {
     backgroundColor: "white",
     color: "black",
@@ -33,6 +38,12 @@ const Modal = ({ onClose }) => {
     <div style={outerStyle} onClick={onClose}>
       <div style={innerStyle} onClick={(e) => e.stopPropagation()}>
         <h2>Hi I am Modal</h2>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent:'center'}}>
+          <input type="file" accept="image/*" onChange={handleImage} />
+
+          {image && <img src={URL.createObjectURL(image)} alt="Preview"></img>}
+        </div>
+
         <button onClick={onClose}>Close Modal</button>
       </div>
     </div>
