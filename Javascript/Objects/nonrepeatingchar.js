@@ -12,7 +12,7 @@ const desiredOutput = (str, pos)=>{
         if(stack[char] == 1){
             if(start < pos ){
                 start++
-            }
+            } 
             else {
                 return result = char
                 start = str.length()
