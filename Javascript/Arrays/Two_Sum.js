@@ -4,6 +4,7 @@
 const nums = [2, 7, 11, 15];
 const target = 17;
 
+//Brute Force
 const twoSum = (nums, target) =>{
     if(!Array.isArray(nums)){
         throw new Error(`${nums} is not an array`)
@@ -20,4 +21,23 @@ const twoSum = (nums, target) =>{
     return finalarr
 }
 
-console.log(twoSum(nums,target));
+
+//Optimized solution
+const twoSum_optimized = (nums,target) =>{
+    const seen = new Map()
+
+
+    for (let i=0;i<nums.length;i++){
+        const current = nums[i]
+        const complement = target - current
+
+        if(seen.has(complement)){
+            return [seen.get(complement),i]
+        }
+
+        seen.set(current,i)
+    }
+    return []
+}
+
+console.log(twoSum_optimized(nums,target));
